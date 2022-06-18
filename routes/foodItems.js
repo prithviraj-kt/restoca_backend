@@ -24,6 +24,6 @@ router.post("/additem", async (req, res) => {
             msg:error.message
         })
     }
-})
+});
 
 module.exports = router;
