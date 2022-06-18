@@ -14,16 +14,5 @@ router.get("/:hotelName", async (req, res) => {
     }
 })
 
-router.post("/additem", async (req, res) => {
-    const data = req.body;
-    try {
-        const addItem = await FOOD.create(data);
-        res.json(addItem);
-    } catch (error) {
-        res.json({
-            msg:error.message
-        })
-    }
-})
 
 module.exports = router;
