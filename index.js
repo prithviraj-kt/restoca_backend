@@ -14,8 +14,9 @@ const PORT = process.env.PORT || "8000";
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", require("./routes/foodItems"));
-mongoose
-  .connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
+// app.use("/", require("./routes/orderditems"));
+app.use("/", require("./routes/orderdItems"));
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(PORT, () => console.log("Server started at port : " + PORT));
   })
